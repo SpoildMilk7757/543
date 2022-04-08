@@ -6,11 +6,23 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     if (_delete == 1) {
-        led.unplot(0, row_select)
-        deleters += 1
+        if (row_select == 1) {
+            led.unplot(0, 4)
+        }
+        if (row_select == 2) {
+            led.unplot(1, 3)
+        }
+        if (row_select == 3) {
+            led.unplot(2, 2)
+        }
+        if (row_select == 4) {
+            led.unplot(3, 1)
+        }
+        if (row_select == 5) {
+            led.unplot(4, 0)
+        }
     }
 })
-let deleters = 0
 let _delete = 0
 let row_select = 0
 led.plot(0, 0)
