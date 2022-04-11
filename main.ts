@@ -8,6 +8,7 @@ input.onGesture(Gesture.Shake, function () {
     if (_delete == 1) {
         if (row_select == 1) {
             led.unplot(0, 4)
+            row_1_deleted += 1
         }
         if (row_select == 2) {
             if (row_2_deleted == 1) {
@@ -77,6 +78,7 @@ input.onGesture(Gesture.Shake, function () {
     if (_delete == 2) {
         if (row_select == 1) {
             led.unplot(0, 4)
+            row_1_deleted += 1
         }
         if (row_select == 2) {
             if (row_2_deleted == 1) {
@@ -156,6 +158,7 @@ input.onGesture(Gesture.Shake, function () {
     if (_delete == 3) {
         if (row_select == 1) {
             led.unplot(0, 4)
+            row_1_deleted += 1
         }
         if (row_select == 2) {
             if (row_2_deleted == 1) {
@@ -202,9 +205,9 @@ input.onGesture(Gesture.Shake, function () {
                 row_4_deleted += 3
             }
             if (row_4_deleted == 0) {
-                led.unplot(1, 0)
-                led.unplot(2, 0)
-                led.unplot(3, 0)
+                led.unplot(1, 1)
+                led.unplot(2, 1)
+                led.unplot(3, 1)
                 row_4_deleted += 3
             }
         }
@@ -269,7 +272,17 @@ led.plot(3, 1)
 led.plot(4, 0)
 row_select = 0
 _delete = 0
+let row_1_deleted = 0
 row_2_deleted = 0
 row_3_deleted = 0
 row_4_deleted = 0
 row_5_deleted = 0
+basic.forever(function () {
+    if (row_2_deleted > 1 && (row_4_deleted > 3 && (row_5_deleted > 4 && row_3_deleted > 2)) && row_1_deleted > 0) {
+        if (turns % 2 == 1) {
+            basic.showString("P2 wins!")
+        } else {
+            basic.showString("P1 wins!")
+        }
+    }
+})
