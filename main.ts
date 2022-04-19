@@ -242,13 +242,189 @@ input.onGesture(Gesture.Shake, function () {
         }
     }
     if (_delete == 4) {
-    	
+        if (row_select == 1) {
+            led.unplot(0, 4)
+            row_1_deleted += 1
+        }
+        if (row_select == 2) {
+            if (row_2_deleted == 1) {
+                led.unplot(0, 3)
+                row_2_deleted += 3
+            }
+            if (row_2_deleted == 0) {
+                led.unplot(0, 3)
+                led.unplot(1, 3)
+                row_2_deleted += 3
+            }
+        }
+        if (row_select == 3) {
+            if (row_3_deleted == 2) {
+                led.unplot(0, 2)
+                row_3_deleted += 3
+            }
+            if (row_3_deleted == 1) {
+                led.unplot(0, 2)
+                led.unplot(1, 2)
+                row_3_deleted += 3
+            }
+            if (row_3_deleted == 0) {
+                led.unplot(0, 2)
+                led.unplot(1, 2)
+                led.unplot(2, 2)
+                row_3_deleted += 3
+            }
+        }
+        if (row_select == 4) {
+            if (row_4_deleted == 3) {
+                led.unplot(0, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 2) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 1) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                led.unplot(2, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 0) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                led.unplot(2, 1)
+                led.unplot(3, 1)
+                row_4_deleted += 4
+            }
+        }
+        if (row_select == 5) {
+            if (row_5_deleted == 4) {
+                led.unplot(0, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 3) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 2) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 1) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                led.unplot(3, 0)
+                row_5_deleted += 4
+            }
+            if (row_5_deleted == 0) {
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                led.unplot(3, 0)
+                led.unplot(4, 0)
+                row_5_deleted += 4
+            }
+        }
+    }
+    if (_delete == 4) {
+        if (row_select == 1) {
+            led.unplot(0, 4)
+            row_1_deleted += 1
+        }
+        if (row_select == 2) {
+            if (row_2_deleted == 1) {
+                led.unplot(0, 3)
+                row_2_deleted += 3
+            }
+            if (row_2_deleted == 0) {
+                led.unplot(0, 3)
+                led.unplot(1, 3)
+                row_2_deleted += 3
+            }
+        }
+        if (row_select == 3) {
+            if (row_3_deleted == 2) {
+                led.unplot(0, 2)
+                row_3_deleted += 3
+            }
+            if (row_3_deleted == 1) {
+                led.unplot(0, 2)
+                led.unplot(1, 2)
+                row_3_deleted += 3
+            }
+            if (row_3_deleted == 0) {
+                led.unplot(0, 2)
+                led.unplot(1, 2)
+                led.unplot(2, 2)
+                row_3_deleted += 3
+            }
+        }
+        if (row_select == 4) {
+            if (row_4_deleted == 3) {
+                led.unplot(0, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 2) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 1) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                led.unplot(2, 1)
+                row_4_deleted += 3
+            }
+            if (row_4_deleted == 0) {
+                led.unplot(0, 1)
+                led.unplot(1, 1)
+                led.unplot(2, 1)
+                led.unplot(3, 1)
+                row_4_deleted += 4
+            }
+        }
+        if (row_select == 5) {
+            if (row_5_deleted == 4) {
+                led.unplot(0, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 3) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 2) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                row_5_deleted += 3
+            }
+            if (row_5_deleted == 1) {
+                led.unplot(0, 0)
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                led.unplot(3, 0)
+                row_5_deleted += 4
+            }
+            if (row_5_deleted == 0) {
+                led.unplot(1, 0)
+                led.unplot(2, 0)
+                led.unplot(3, 0)
+                led.unplot(4, 0)
+                row_5_deleted += 4
+            }
+        }
     }
     turns += 1
     row_select = 0
     _delete = 0
 })
 let turns = 0
+let row_1_deleted = 0
 let row_5_deleted = 0
 let row_4_deleted = 0
 let row_3_deleted = 0
@@ -272,7 +448,6 @@ led.plot(3, 1)
 led.plot(4, 0)
 row_select = 0
 _delete = 0
-let row_1_deleted = 0
 row_2_deleted = 0
 row_3_deleted = 0
 row_4_deleted = 0
@@ -280,9 +455,9 @@ row_5_deleted = 0
 basic.forever(function () {
     if (row_2_deleted > 1 && (row_4_deleted > 3 && (row_5_deleted > 4 && row_3_deleted > 2)) && row_1_deleted > 0) {
         if (turns % 2 == 1) {
-            basic.showString("P2 wins!")
-        } else {
             basic.showString("P1 wins!")
+        } else {
+            basic.showString("P2 wins!")
         }
     }
 })
