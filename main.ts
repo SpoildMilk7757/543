@@ -1,8 +1,14 @@
+input.onPinPressed(TouchPin.P0, function () {
+    row_select += -1
+})
 input.onButtonPressed(Button.A, function () {
     row_select += 1
 })
 input.onButtonPressed(Button.B, function () {
     _delete += 1
+})
+input.onPinPressed(TouchPin.P1, function () {
+    _delete += -1
 })
 input.onGesture(Gesture.Shake, function () {
     if (_delete == 1) {
@@ -411,6 +417,7 @@ input.onGesture(Gesture.Shake, function () {
                 row_5_deleted += 4
             }
             if (row_5_deleted == 0) {
+                led.unplot(0, 0)
                 led.unplot(1, 0)
                 led.unplot(2, 0)
                 led.unplot(3, 0)
@@ -459,5 +466,31 @@ basic.forever(function () {
         } else {
             basic.showString("P2 wins!")
         }
+    }
+})
+basic.forever(function () {
+    if (row_select == 1) {
+        led.toggle(0, 4)
+        basic.pause(500)
+    } else if (row_select == 2) {
+        for (let index = 0; index <= 1; index++) {
+            led.toggle(index, 3)
+        }
+        basic.pause(500)
+    } else if (row_select == 3) {
+        for (let index = 0; index <= 2; index++) {
+            led.toggle(index, 2)
+        }
+        basic.pause(500)
+    } else if (row_select == 4) {
+        for (let index = 0; index <= 3; index++) {
+            led.toggle(index, 1)
+        }
+        basic.pause(500)
+    } else if (row_select == 5) {
+        for (let index = 0; index <= 4; index++) {
+            led.toggle(index, 0)
+        }
+        basic.pause(500)
     }
 })
