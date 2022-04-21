@@ -9,6 +9,125 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onPinPressed(TouchPin.P1, function () {
     _delete += -1
+    if (_delete == 1) {
+        if (row_select == 1) {
+            led.toggle(0, 4)
+            basic.pause(300)
+            led.toggle(0, 4)
+        }
+        if (row_select == 2) {
+            if (row_2_deleted == 1) {
+                led.toggle(0, 3)
+                basic.pause(300)
+                led.toggle(0, 3)
+            } else {
+                led.toggle(1, 3)
+                basic.pause(300)
+                led.toggle(1, 3)
+            }
+        }
+        if (row_select == 3) {
+            if (row_3_deleted == 2) {
+                led.toggle(0, 2)
+                basic.pause(300)
+                led.toggle(0, 2)
+            } else if (row_3_deleted == 1) {
+                led.toggle(1, 2)
+                basic.pause(300)
+                led.toggle(1, 2)
+            } else {
+                led.toggle(2, 2)
+                basic.pause(300)
+                led.toggle(2, 2)
+            }
+        }
+        if (row_select == 4) {
+            if (row_4_deleted == 3) {
+                led.toggle(0, 1)
+                basic.pause(300)
+                led.toggle(0, 1)
+            } else if (row_4_deleted == 2) {
+                led.toggle(1, 1)
+                basic.pause(300)
+                led.toggle(1, 1)
+            } else if (row_4_deleted == 1) {
+                led.toggle(2, 1)
+                basic.pause(300)
+                led.toggle(2, 1)
+            } else {
+                led.toggle(3, 1)
+                basic.pause(300)
+                led.toggle(3, 1)
+            }
+        }
+        if (row_select == 5) {
+        	
+        }
+    } else if (_delete == 2) {
+        if (row_select == 1) {
+        	
+        }
+        if (row_select == 2) {
+        	
+        }
+        if (row_select == 3) {
+        	
+        }
+        if (row_select == 4) {
+        	
+        }
+        if (row_select == 5) {
+        	
+        }
+    } else if (_delete == 3) {
+        if (row_select == 1) {
+        	
+        }
+        if (row_select == 2) {
+        	
+        }
+        if (row_select == 3) {
+        	
+        }
+        if (row_select == 4) {
+        	
+        }
+        if (row_select == 5) {
+        	
+        }
+    } else if (_delete == 4) {
+        if (row_select == 1) {
+        	
+        }
+        if (row_select == 2) {
+        	
+        }
+        if (row_select == 3) {
+        	
+        }
+        if (row_select == 4) {
+        	
+        }
+        if (row_select == 5) {
+        	
+        }
+    } else {
+        if (row_select == 1) {
+        	
+        }
+        if (row_select == 2) {
+        	
+        }
+        if (row_select == 3) {
+        	
+        }
+        if (row_select == 4) {
+        	
+        }
+        if (row_select == 5) {
+        	
+        }
+    }
 })
 input.onGesture(Gesture.Shake, function () {
     if (_delete == 1) {
@@ -466,31 +585,5 @@ basic.forever(function () {
         } else {
             basic.showString("P2 wins!")
         }
-    }
-})
-basic.forever(function () {
-    if (row_select == 1) {
-        led.toggle(0, 4)
-        basic.pause(500)
-    } else if (row_select == 2) {
-        for (let index = 0; index <= 1; index++) {
-            led.toggle(index, 3)
-        }
-        basic.pause(500)
-    } else if (row_select == 3) {
-        for (let index = 0; index <= 2; index++) {
-            led.toggle(index, 2)
-        }
-        basic.pause(500)
-    } else if (row_select == 4) {
-        for (let index = 0; index <= 3; index++) {
-            led.toggle(index, 1)
-        }
-        basic.pause(500)
-    } else if (row_select == 5) {
-        for (let index = 0; index <= 4; index++) {
-            led.toggle(index, 0)
-        }
-        basic.pause(500)
     }
 })
