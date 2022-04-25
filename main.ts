@@ -61,14 +61,40 @@ input.onPinPressed(TouchPin.P1, function () {
             }
         }
         if (row_select == 5) {
-        	
+            if (row_5_deleted == 4) {
+                led.toggle(0, 0)
+                basic.pause(300)
+                led.toggle(0, 0)
+            } else if (row_5_deleted == 3) {
+                led.toggle(1, 0)
+                basic.pause(300)
+                led.toggle(1, 0)
+            } else if (row_5_deleted == 2) {
+                led.toggle(2, 0)
+                basic.pause(300)
+                led.toggle(2, 0)
+            } else if (row_5_deleted == 1) {
+                led.toggle(3, 0)
+                basic.pause(300)
+                led.toggle(3, 0)
+            } else {
+                led.toggle(4, 0)
+                basic.pause(300)
+                led.toggle(4, 0)
+            }
         }
     } else if (_delete == 2) {
         if (row_select == 1) {
-        	
+            led.toggle(0, 0)
+            basic.pause(300)
+            led.toggle(0, 0)
         }
         if (row_select == 2) {
-        	
+            led.toggle(0, 3)
+            led.toggle(1, 3)
+            basic.pause(300)
+            led.toggle(0, 3)
+            led.toggle(1, 3)
         }
         if (row_select == 3) {
         	
