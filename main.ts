@@ -571,6 +571,11 @@ input.onGesture(Gesture.Shake, function () {
             }
         }
     }
+    if (_delete == 5) {
+        for (let index = 0; index <= 4; index++) {
+            led.unplot(index, row_select)
+        }
+    }
     turns += 1
     row_select = 0
     _delete = 0
