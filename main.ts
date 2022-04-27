@@ -97,7 +97,23 @@ input.onPinPressed(TouchPin.P1, function () {
             led.toggle(1, 3)
         }
         if (row_select == 3) {
-        	
+            if (row_3_deleted == 0) {
+                led.unplot(2, 2)
+                led.unplot(1, 2)
+                basic.pause(300)
+                led.unplot(2, 2)
+                led.unplot(1, 2)
+            } else if (row_3_deleted == 1) {
+                led.unplot(1, 2)
+                led.unplot(0, 2)
+                basic.pause(300)
+                led.unplot(1, 2)
+                led.unplot(0, 2)
+            } else {
+                led.unplot(0, 2)
+                basic.pause(300)
+                led.unplot(0, 2)
+            }
         }
         if (row_select == 4) {
         	
@@ -572,8 +588,35 @@ input.onGesture(Gesture.Shake, function () {
         }
     }
     if (_delete == 5) {
-        for (let index = 0; index <= 4; index++) {
-            led.unplot(index, row_select)
+        if (row_select == 1) {
+            for (let index = 0; index <= 4; index++) {
+                led.unplot(index, 5 - row_select)
+            }
+            row_1_deleted += 1
+        }
+        if (row_select == 2) {
+            for (let index = 0; index <= 4; index++) {
+                led.unplot(index, 5 - row_select)
+            }
+            row_2_deleted += 2
+        }
+        if (row_select == 3) {
+            for (let index = 0; index <= 4; index++) {
+                led.unplot(index, 5 - row_select)
+            }
+            row_3_deleted += 3
+        }
+        if (row_select == 4) {
+            for (let index = 0; index <= 4; index++) {
+                led.unplot(index, 5 - row_select)
+            }
+            row_4_deleted += 4
+        }
+        if (row_select == 5) {
+            for (let index = 0; index <= 4; index++) {
+                led.unplot(index, 5 - row_select)
+            }
+            row_5_deleted += 5
         }
     }
     turns += 1
